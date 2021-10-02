@@ -1,0 +1,39 @@
+// Chapter 4: Relationships
+
+GET {{host}}/api/v1/posts/1/author HTTP/1.1
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts/1/relationships/author HTTP/1.1
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts/1/comments HTTP/1.1
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts/1/relationships/comments HTTP/1.1
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts/1/tags HTTP/1.1
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts/1/relationships/tags HTTP/1.1
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts/1?include=author,comments.user HTTP/1.1
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts/1?include=tags HTTP/1.1
+Accept: application/vnd.api+json

@@ -1,0 +1,4 @@
+// Chapter 3: Servers and Schemas
+
+GET {{host}}/api/v1/posts/1 HTTP/1.1
+Accept: application/vnd.api+json

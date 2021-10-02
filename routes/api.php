@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use LaravelJsonApi\Laravel\Facades\JsonApiRoute;
+use LaravelJsonApi\Laravel\Http\Controllers\JsonApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 JsonApiRoute::server('v1')->prefix('v1')->resources(function ($server) {
-    $server->resource('posts')->readOnly();
+    $server->resource('posts', JsonApiController::class)
+        ->readOnly()
+        ->relationships(function ($relations) {
+            $relations->hasOne('author')->readOnly();
+            $relations->hasMany('comments')->readOnly();
+            $relations->hasMany('tags')->readOnly();
+        });
 });
