@@ -1,7 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\JsonApi\V1;
 
+use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use LaravelJsonApi\Core\Server\Server as BaseServer;
 
 class Server extends BaseServer
@@ -21,7 +25,9 @@ class Server extends BaseServer
      */
     public function serving(): void
     {
-        // no-op
+        Auth::shouldUse('sanctum');
+
+        Post::creating(static fn(Post $post) => $post->author()->associate(Auth::user()));
     }
 
     /**

@@ -1,0 +1,28 @@
+// Chapter 5: Creating Resources
+
+POST {{host}}/api/v1/posts?include=author,tags HTTP/1.1
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json
+
+{
+    "data": {
+        "type": "posts",
+        "attributes": {
+            "content": "In our second blog post, you will learn how to create resources using the JSON:API specification.",
+            "publishedAt": null,
+            "slug": "creating-jsonapi-resources",
+            "title": "How to Create JSON:API Resources"
+        },
+        "relationships": {
+            "tags": {
+                "data": [
+                    {
+                        "type": "tags",
+                        "id": "2"
+                    }
+                ]
+            }
+        }
+    }
+}
