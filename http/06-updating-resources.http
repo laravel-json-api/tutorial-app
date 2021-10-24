@@ -1,0 +1,114 @@
+// Chapter 6: Updating Resources
+
+PATCH {{host}}/api/v1/posts/2?include=tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json
+
+{
+    "data": {
+        "type": "posts",
+        "id": "2",
+        "attributes": {
+            "publishedAt": "2021-10-23T11:55:00.000000Z",
+            "title": "How to Create and Update JSON:API Resources"
+        },
+        "relationships": {
+            "tags": {
+                "data": [
+                    {
+                        "type": "tags",
+                        "id": "1"
+                    },
+                    {
+                        "type": "tags",
+                        "id": "2"
+                    }
+                ]
+            }
+        }
+    }
+}
+
+###
+
+PATCH {{host}}/api/v1/posts/2/relationships/tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json
+
+{
+    "data": []
+}
+
+###
+
+GET {{host}}/api/v1/posts/2/tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+
+###
+
+PATCH {{host}}/api/v1/posts/2/relationships/tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json
+
+{
+    "data": [
+        {
+            "type": "tags",
+            "id": "1"
+        }
+    ]
+}
+
+###
+
+GET {{host}}/api/v1/posts/2/tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+
+###
+
+POST {{host}}/api/v1/posts/2/relationships/tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json
+
+{
+    "data": [
+        {
+            "type": "tags",
+            "id": "2"
+        }
+    ]
+}
+
+###
+
+GET {{host}}/api/v1/posts/2/tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+
+###
+
+DELETE {{host}}/api/v1/posts/2/relationships/tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json
+
+{
+    "data": [
+        {
+            "type": "tags",
+            "id": "1"
+        }
+    ]
+}
+
+###
+
+GET {{host}}/api/v1/posts/2/tags
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json

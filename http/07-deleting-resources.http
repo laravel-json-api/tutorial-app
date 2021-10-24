@@ -1,0 +1,11 @@
+// Chapter 7: Deleting Resources
+
+DELETE {{host}}/api/v1/posts/2
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts/2
+Authorization: Bearer {{token}}
+Accept: application/vnd.api+json
