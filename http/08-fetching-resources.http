@@ -1,0 +1,9 @@
+// Chapter 8: Fetching Resources
+
+GET {{host}}/api/v1/posts HTTP/1.1
+Accept: application/vnd.api+json
+
+###
+
+GET {{host}}/api/v1/posts?page[number]=1&page[size]=5 HTTP/1.1
+Accept: application/vnd.api+json

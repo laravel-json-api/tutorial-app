@@ -1,6 +1,6 @@
 // Chapter 6: Updating Resources
 
-PATCH {{host}}/api/v1/posts/2?include=tags
+PATCH {{host}}/api/v1/posts/2?include=tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
 Content-Type: application/vnd.api+json
@@ -32,7 +32,7 @@ Content-Type: application/vnd.api+json
 
 ###
 
-PATCH {{host}}/api/v1/posts/2/relationships/tags
+PATCH {{host}}/api/v1/posts/2/relationships/tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
 Content-Type: application/vnd.api+json
@@ -43,13 +43,13 @@ Content-Type: application/vnd.api+json
 
 ###
 
-GET {{host}}/api/v1/posts/2/tags
+GET {{host}}/api/v1/posts/2/tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
 
 ###
 
-PATCH {{host}}/api/v1/posts/2/relationships/tags
+PATCH {{host}}/api/v1/posts/2/relationships/tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
 Content-Type: application/vnd.api+json
@@ -65,13 +65,13 @@ Content-Type: application/vnd.api+json
 
 ###
 
-GET {{host}}/api/v1/posts/2/tags
+GET {{host}}/api/v1/posts/2/tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
 
 ###
 
-POST {{host}}/api/v1/posts/2/relationships/tags
+POST {{host}}/api/v1/posts/2/relationships/tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
 Content-Type: application/vnd.api+json
@@ -87,13 +87,13 @@ Content-Type: application/vnd.api+json
 
 ###
 
-GET {{host}}/api/v1/posts/2/tags
+GET {{host}}/api/v1/posts/2/tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
 
 ###
 
-DELETE {{host}}/api/v1/posts/2/relationships/tags
+DELETE {{host}}/api/v1/posts/2/relationships/tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
 Content-Type: application/vnd.api+json
@@ -109,6 +109,6 @@ Content-Type: application/vnd.api+json
 
 ###
 
-GET {{host}}/api/v1/posts/2/tags
+GET {{host}}/api/v1/posts/2/tags HTTP/1.1
 Authorization: Bearer {{token}}
 Accept: application/vnd.api+json
