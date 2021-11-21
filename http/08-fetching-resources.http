@@ -3,7 +3,32 @@
 GET {{host}}/api/v1/posts HTTP/1.1
 Accept: application/vnd.api+json
 
-###
+### Pagination
 
 GET {{host}}/api/v1/posts?page[number]=1&page[size]=5 HTTP/1.1
+Accept: application/vnd.api+json
+
+### Filter by ID
+
+GET {{host}}/api/v1/posts?filter[id][]=1&filter[id][]=3&filter[id][]=5 HTTP/1.1
+Accept: application/vnd.api+json
+
+### Filter by Author
+
+GET {{host}}/api/v1/posts?filter[author][]=1&filter[author][]=3&include=author&page[number]=1&page[size]=5 HTTP/1.1
+Accept: application/vnd.api+json
+
+### Sorting
+
+GET {{host}}/api/v1/posts?sort=-publishedAt&page[number]=1&page[size]=3 HTTP/1.1
+Accept: application/vnd.api+json
+
+### Sparse Fieldsets
+
+GET {{host}}/api/v1/posts?fields[posts]=author,publishedAt,title&fields[users]=name&include=author&page[number]=1&page[size]=5 HTTP/1.1
+Accept: application/vnd.api+json
+
+### Invalid Request
+
+GET {{host}}/api/v1/posts?page[number]=1&page[size]=150 HTTP/1.1
 Accept: application/vnd.api+json
