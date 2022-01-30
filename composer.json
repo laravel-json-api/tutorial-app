@@ -8,19 +8,19 @@
         "php": "^7.4|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "laravel-json-api/laravel": "^1.0",
-        "laravel/framework": "^8.54",
+        "laravel-json-api/laravel": "^2.0",
+        "laravel/framework": "^8.76",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
-        "laravel-json-api/testing": "^1.0",
+        "laravel-json-api/testing": "^1.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
         "psr-4": {
