@@ -27,7 +27,9 @@ class Server extends BaseServer
     {
         Auth::shouldUse('sanctum');
 
-        Post::creating(static fn(Post $post) => $post->author()->associate(Auth::user()));
+        Post::creating(static function (Post $post): void {
+            $post->author()->associate(Auth::user());
+        });
     }
 
     /**
