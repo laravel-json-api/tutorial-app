@@ -12,10 +12,8 @@ class PostSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         $author = User::create([
             'name' => 'Artie Shaw',

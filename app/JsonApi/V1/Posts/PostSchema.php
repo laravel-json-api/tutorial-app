@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\JsonApi\V1\Posts;
 
 use App\Models\Post;
@@ -97,5 +95,4 @@ class PostSchema extends Schema
 
         return $query->whereNotNull('published_at');
     }
-
 }

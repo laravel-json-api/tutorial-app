@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\JsonApi\V1\Users;
 
 use App\Models\User;
